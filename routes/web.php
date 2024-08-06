@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\LubotActiveWs ;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -90,6 +92,8 @@ Route::get('/api/ciudades' , function () {
     $paises = DB::table('ciudades')->get();
     return $paises;
 });
+
+Route::get('api/activar_ws/{company_id}', [LubotActiveWs::class , 'ActivarWs'] );
 
 // rutas controladores para el login 
 Route::middleware('auth')->group(function () {
