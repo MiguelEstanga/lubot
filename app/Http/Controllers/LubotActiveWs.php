@@ -20,8 +20,7 @@ class LubotActiveWs extends Controller
     }
 
     function iniciar_sesion_whatsapp_ws($company_id)
-    {
-        
+    { 
         $workingDirectory = env('RUTA_ARCHIVO_PY'); // ruta por defecto del 
         // Ruta al ejecutable de Python y al script
         $pythonPath = env('PYTHON_PATH');// ejcutor

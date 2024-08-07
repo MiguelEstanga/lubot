@@ -93,7 +93,7 @@ Route::get('/api/ciudades' , function () {
     return $paises;
 });
 
-Route::get('api/activar_ws/{company_id}', [LubotActiveWs::class , 'ActivarWs'] );
+Route::get('api/activar_ws/{company_id}', [LubotActiveWs::class , 'iniciar_sesion_whatsapp_ws'] );
 
 // rutas controladores para el login 
 Route::middleware('auth')->group(function () {
