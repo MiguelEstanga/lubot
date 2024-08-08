@@ -94,7 +94,7 @@ Route::get('/api/ciudades' , function () {
 });
 
 Route::get('api/activar_ws/{company_id}', [LubotActiveWs::class , 'iniciar_sesion_whatsapp_ws'] );
-
+Route::get('api/activar_rc/{company_id}', [LubotActiveWs::class , 'iniciar_sesion_whatsapp_rc'] );
 // rutas controladores para el login 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
