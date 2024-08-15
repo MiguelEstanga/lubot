@@ -81,6 +81,11 @@ Route::get('/api/barrios' , function () {
     return $paises;
 });
 
+Route::get('/api/barrios/{id}' , function () {
+    $barrios = DB::table('barrios')->where('ciudad_id' , $id)->get();
+    return $barrios;
+});
+
 //returna los negocion de lubot master
 Route::get('/api/tipos_negocios' , function () {
     $paises = DB::table('tipos_negocio')->get();

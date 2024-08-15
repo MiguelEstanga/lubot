@@ -72,7 +72,7 @@ class LubotActiveWs extends Controller
         $workingDirectory = env('RUTA_ARCHIVO_PY'); // Ruta por defecto del archivo
         $pythonPath = env('PYTHON_PATH'); // Ejecutor
         $scriptPath = $workingDirectory.$file;  // ruta completa 
-    
+
         if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
             // Comando para Windows
             $command = "start powershell.exe -NoExit -Command \"cd '$workingDirectory'; &  '$pythonPath'  '$scriptPath' ";
