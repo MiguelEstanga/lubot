@@ -81,7 +81,7 @@ Route::get('/api/barrios' , function () {
     return $paises;
 });
 
-Route::get('/api/barrios/{id}' , function () {
+Route::get('/api/barrios/{id}' , function ($id) {
     $barrios = DB::table('barrios')->where('ciudad_id' , $id)->get();
     return $barrios;
 });
