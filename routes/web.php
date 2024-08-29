@@ -12,7 +12,7 @@ Route::get('/', function () {
 });
 
 Route::get('/test', function (){
-    return 'hola mundo';
+    return 'hola mundod';
 });
 Route::get('/api/activar_bot', function () {
     //return 'aqui vamos';
