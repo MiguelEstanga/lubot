@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Http;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test', function (){
+    return 'hola mundo';
+});
 Route::get('/api/activar_bot', function () {
     //return 'aqui vamos';
     $response = Http::withHeaders(['Accept' => 'application/json'])
