@@ -5,7 +5,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
-
+use App\Http\Controllers\BusquedaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -186,4 +186,15 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+//like
+
+    Route::get('ciudad/{ciudad}', [BusquedaController::class, 'likeCiudadad']);
+    Route::get('pais/{ciudad}', [BusquedaController::class, 'likePais']);
+    Route::get('barrios/{ciudad}', [BusquedaController::class, 'likeBarrio']);
+    Route::get('tipo_negocio/{ciudad}', [BusquedaController::class, 'likeNegocio']);
+
+
+
+
 require __DIR__ . '/auth.php';
