@@ -15,6 +15,7 @@ class BusquedaController extends Controller
         // Realizar la consulta utilizando LIKE, agregando los comodines %
         $ciudade = DB::table('ciudades')
             ->whereRaw('LOWER(nombre) LIKE ?', ["%{$input}%"])
+            ->orWhere('id' , $ciudad)
             ->first();
 
         return $ciudade;
@@ -28,6 +29,7 @@ class BusquedaController extends Controller
         // Realizar la consulta utilizando LIKE, agregando los comodines %
         $ciudade = DB::table('paises')
             ->whereRaw('LOWER(nombre) LIKE ?', ["%{$input}%"])
+            ->orWhere('id' , $ciudad)
             ->first();
 
         return $ciudade;
@@ -41,6 +43,7 @@ class BusquedaController extends Controller
         // Realizar la consulta utilizando LIKE, agregando los comodines %
         $ciudade = DB::table('barrios')
             ->whereRaw('LOWER(nombre) LIKE ?', ["%{$input}%"])
+            ->orWhere('id' , $ciudad)
             ->first();
 
         return $ciudade;
@@ -54,6 +57,7 @@ class BusquedaController extends Controller
         // Realizar la consulta utilizando LIKE, agregando los comodines %
         $ciudade = DB::table('tipos_negocio')
             ->whereRaw('LOWER(nombre) LIKE ?', ["%{$input}%"])
+            ->orWhere('id' , $ciudad)
             ->first();
 
         return $ciudade;
